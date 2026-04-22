@@ -1,6 +1,7 @@
 ## 🎬 DevSecOps Netflix Clone on Amazon EKS ##
 This project demonstrates an enterprise-grade DevSecOps pipeline for deploying a highly scalable Netflix Clone (React-based) on Amazon EKS. It integrates security scanning, automated CI/CD, and GitOps practices to ensure a "Zero Trust" and "Always-Sync" deployment environment.
 
+
 ### 🏗 Project Architecture ###
 #### CI (Continuous Integration): 
 Triggered by GitHub commits; Jenkins runs code analysis, security scans, and builds Docker images.
@@ -10,6 +11,7 @@ ArgoCD monitors the repository and synchronizes the desired state from Git to th
 
 #### Infrastructure: 
 Managed via Amazon EKS, utilizing AWS Load Balancer Controller for external traffic.
+
 
 ### 🛠 Technologies & Terms ###
 ### Core Technologies ###
@@ -62,6 +64,7 @@ Custom networking with public/private subnets and Elastic IPs.
 #### ELB (Elastic Load Balancing): 
 Automatically provisioned via the AWS Load Balancer Controller.
 
+
 ### 🚀 How to Solve (Deployment Steps) ###
 #### Step 1: Infrastructure Provisioning
 Create the EKS cluster using eksctl:
@@ -95,6 +98,17 @@ annotations:
   service.beta.kubernetes.io/aws-load-balancer-type: "external"
   service.beta.kubernetes.io/aws-load-balancer-scheme: "internet-facing"
 
+
+### 📊 Monitoring ###
+Access the Grafana dashboard to monitor:
+
+#### Pod Health: 
+CPU and Memory usage per container.
+
+#### Network Traffic:
+Request latency through the Load Balancer.
+
+
 ### 📦 Large File Management (Git LFS) ###
 This project uses Git LFS (Large File Storage) to manage binary assets like PDFs and heavy images. In our .gitattributes, we use the following configuration:
 
@@ -112,11 +126,3 @@ Uses LFS logic to handle conflicts if two people change the same PDF.
 #### -text:
 Prevents Git from modifying line endings, ensuring the PDF doesn't get corrupted.
 
-### 📊 Monitoring ###
-Access the Grafana dashboard to monitor:
-
-#### Pod Health: 
-CPU and Memory usage per container.
-
-#### Network Traffic:
-Request latency through the Load Balancer.
