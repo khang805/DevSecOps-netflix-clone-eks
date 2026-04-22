@@ -2,9 +2,11 @@
 This project demonstrates an enterprise-grade DevSecOps pipeline for deploying a highly scalable Netflix Clone (React-based) on Amazon EKS. It integrates security scanning, automated CI/CD, and GitOps practices to ensure a "Zero Trust" and "Always-Sync" deployment environment.
 
 ### 🏗 Project Architecture ###
-CI (Continuous Integration): Triggered by GitHub commits; Jenkins runs code analysis, security scans, and builds Docker images.
+#### CI (Continuous Integration):####
+Triggered by GitHub commits; Jenkins runs code analysis, security scans, and builds Docker images.
 
-CD (Continuous Deployment): ArgoCD monitors the repository and synchronizes the desired state from Git to the EKS cluster.
+#### CD (Continuous Deployment):####
+ArgoCD monitors the repository and synchronizes the desired state from Git to the EKS cluster.
 
 Infrastructure: Managed via Amazon EKS, utilizing AWS Load Balancer Controller for external traffic.
 
